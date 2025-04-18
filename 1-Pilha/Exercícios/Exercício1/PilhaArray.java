@@ -29,6 +29,7 @@ public class PilhaArray implements Pilha{
             a = b;
         }
         a[++t] = o; // O topo agora é o novo elemento
+        
     }
 
     public Object pop() throws PilhaVaziaExcecao {
@@ -37,6 +38,13 @@ public class PilhaArray implements Pilha{
         }
         Object r = a[t--]; // Remove o elemento
         return r; // Retorna o elemento
+    }
+
+    public void empty() throws PilhaVaziaExcecao{
+        if (isEmpty()){
+            throw new PilhaVaziaExcecao("A pilha está vazia!");
+        }
+        t = -1;
     }
 
     public boolean isEmpty(){
@@ -53,4 +61,31 @@ public class PilhaArray implements Pilha{
         }
         return a[t];
     }
+
+    public void adicionaPilha(Pilha p){
+        PilhaArray pilhaAux = new PilhaArray(capacidade, 10);
+
+        while (!p.isEmpty()){
+            pilhaAux.push(p.pop());
+        }
+
+        while (!pilhaAux.isEmpty()){
+            this.push(pilhaAux.pop());
+        }
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("[");
+        for (int i = 0; i <= t; i++) {
+            sb.append(a[i]);
+            if (i < t) {
+                sb.append(", ");
+            }
+        }
+        sb.append("]");
+        return sb.toString();
+    }
+
 }

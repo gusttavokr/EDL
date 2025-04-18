@@ -1,11 +1,11 @@
 1) Refazer depois
 
 2)
-|     | Incremento 10 | Incremento 100 | Incremento 1000 | duplicação |
-|----------|----------|----------|----------|----------|
-| 10 elementos  | Linha 1  | Linha 1  | Linha 1  | Linha 1  |
-| 100 elementos  | Linha 2  | Linha 2  | Linha 2  | Linha 2  |
-| 1000 elementos  | Linha 3  | Linha 3  | Linha 3  | Linha 3  |
-| 10000 elementos  | Linha 4  | Linha 4  | Linha 4  | Linha 4  |
-| 100000 elementos  | Linha 5  | Linha 5  | Linha 5  | Linha 5  |
-| 1000000 elementos  | Linha 6  | Linha 6  | Linha 6  | Linha 6  |
+|                  | Incremento 10 | Incremento 100 | Incremento 1000 | duplicação |
+|------------------|---------------|----------------|-----------------|------------|
+| 10 elementos     | 5             | 3              | 2               | 3          |
+| 100 elementos    | 16            | 15             | 16              | 20         |
+| 1000 elementos   | 113           | 120            | 131             | 118        |
+| 10000 elementos  | 1264          | 1053           | 945             | 942        |
+| 100000 elementos | 10531         | 10227          | 9516            | 9319       |
+| 1000000 elementos| 263094        | 150589         | 128721          | 115862     |

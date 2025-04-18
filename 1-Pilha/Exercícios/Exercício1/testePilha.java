@@ -14,21 +14,25 @@
 public class testePilha {
 
 	public static void main(String[] args) {		
-		Integer[] b = new Integer[1];	// Declaração de array
-		PilhaArray pp=new PilhaArray(1,0); // Iniciando a pilha com tamanho 1, incremento
-
+		PilhaArray minhaPilha =new PilhaArray(1,0); // Iniciando a pilha com tamanho 1, incremento
+		
+		long inicio = System.currentTimeMillis();
 		// Inserindo elementos na pilha
 		System.out.println("inserindo");
-		for(int f=0;f<10;f++){
-		  System.out.println(f);		  
-		  pp.push(new Integer(f));
+		for(int f=0;f<1000000;f++){
+			System.out.println(f);		  
+			minhaPilha.push(new Integer(f));
 		}
-
+		long fim = System.currentTimeMillis();
 		
-		System.out.println("retirando");
-		for(int f=0;f<10;f++){
-			  System.out.print(f);
-			  System.out.println(" - "+pp.pop());
-		}
+		long tempo = fim - inicio;
+		System.out.println("Tempo de execução:" + tempo);
+		
+
+		//System.out.println("retirando");
+		//for(int f=0;f<10;f++){
+		//	  System.out.print(f);
+		//	  System.out.println(" - "+pp.pop());
+		//}
 	}
 }
