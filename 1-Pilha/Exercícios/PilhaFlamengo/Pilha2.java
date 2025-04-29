@@ -1,4 +1,4 @@
-public interface Pilha{
+public interface Pilha2{
     public boolean isEmptyVermelho();
     public int sizeVermelho();
     public Object popVermelho() throws PilhaVaziaExcecao;
