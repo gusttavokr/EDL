@@ -69,15 +69,30 @@ public class ListaArray implements Lista{
         Node velha = null;
         Node nova = null;
 
-        for (i=0; i<size(); i++){
-            if (array[i] == q){
-                velha = q;
-            } else if (array[i] == n) {
+        for (i=0; i != size(); i++){
+            if (array[i] == n){
                 nova = n;
+            } else if (array[i] == q) {
+                velha = q;
             }
         }
 
+        if (nova == null && velha == null){
+            throw new NoInvalido("O nó não existe!");
+        } 
         
+        n.setElemento(velha.getElemento());
+        q.setElemento(nova.getElemento());
     }
-    
+
+
+    public void insertBefore(Node n, Object o){
+        if (isEmpty()){
+            throw new EmptyListaException("A lista está vazia!");
+        }
+
+        if (size() == capacidade - 1){
+            
+        }
+    }
 }
