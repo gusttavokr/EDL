@@ -114,7 +114,6 @@ public class ListaArray implements Lista{
             }
         }
 
-        
         throw new NoInvalido("O nó inválido!");
     }
 }
