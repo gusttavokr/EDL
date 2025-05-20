@@ -82,7 +82,7 @@ public class ListaArray implements Lista{
         throw new NoInvalido("Nó inválido");
     }
 
-    public void replaceElements(Node n, Object o){
+    public void replaceElement(Node n, Object o){
         if (isEmpty()) {
             throw new EmptyListaException("A lista está vazia!");
         }

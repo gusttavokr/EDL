@@ -17,7 +17,7 @@ public interface Lista{
     public Node after(Node p);
 
     // Métodos de atualizar
-    public void replaceElements(Node n, Object o) throws EmptyListaException, NoInvalido, ObjectNullException; // Atualize nó N com elemento Q
+    public void replaceElement(Node n, Object o) throws EmptyListaException, NoInvalido, ObjectNullException; // Atualize nó N com elemento Q
     public void swapElements(Node n, Node q) throws EmptyListaException, NoInvalido; // Troque nó N pelo nó q
     public void insertBefore(Node n, Object o) throws EmptyListaException, NoInvalido, ObjectNullException; // Insira o elemento no anterior do nó N
     public void insertAfter(Node n, Object o) throws EmptyListaException, NoInvalido, ObjectNullException;  // Insira o elemento no próximo do nó N
