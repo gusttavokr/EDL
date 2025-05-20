@@ -35,18 +35,51 @@ public class ListaArray implements Lista{
         return array[size() - 1] == n;
     }
 
-    public Object First(){
+    public Node First(){
         if (isEmpty()){
             throw new EmptyListaException("A lista está vazia!");
         }
         return array[0];
     }
 
-    public Object Last(){
+    public Node Last(){
         if(isEmpty()){
             throw new EmptyListaException("A lista está vazia!");
         }
         return array[size()-1];
+    }
+
+    public Node before(Node n){
+        if (isEmpty()) {
+            throw new EmptyListaException("A lista está vazia!");
+        }
+
+        if (n==array[0]){
+            throw new NoInvalido("Nó inválido");
+        }
+
+        for (int i=0; i != size(); i++){
+            if (array[i] == n) {
+                return array[i-1];
+            }
+        }
+        throw new NoInvalido("Esse nó não existe!");
+    }
+
+    public Node after(Node n){
+        if (isEmpty()){
+            throw new EmptyListaException("A lista está vazia!");
+        }
+
+        if (n == array[size()-1]){
+            throw new NoInvalido("Nó inválido!");
+        }
+        for (int i=0; i != size(); i++){
+            if (array[i] == n){
+                return array[i+1];
+            }
+        }
+        throw new NoInvalido("Nó inválido");
     }
 
     public void replaceElements(Node n, Object o){
@@ -91,8 +124,7 @@ public class ListaArray implements Lista{
             throw new EmptyListaException("A lista está vazia!");
         }
 
-
-        for (int i=0; i != size(); i++){
+        for (int i=0; i < size(); i++){
             if (array[i] == n){
                 if (size() == capacidade -1){
                     capacidade2 = capacidade*2;
@@ -115,5 +147,94 @@ public class ListaArray implements Lista{
         }
 
         throw new NoInvalido("O nó inválido!");
+    }
+
+    public void insertAfter(Node n, Object o){
+        if (isEmpty()){
+            throw new EmptyListaException("A lista está vazia!");
+        }
+        for (int i=0; i < size(); i++){
+            if (array[i] == n){
+                if (size() == capacidade -1){
+                    capacidade2 = capacidade *2;
+                    Node[] novoarray = new Node(capacidade2);
+                }
+                for (int j = 0; i != capacidade2; i++){
+                    novoarray[j] = array[j];
+                }
+                array = novoarray;
+            }
+            for (int j = size(); j > i; j--){
+                array[j] = array[j-1];
+            }
+
+            Node novo = new Node(o);
+            array[i+1] = novo;
+            tamanho++;
+            return;
+        }
+
+        throw new NoInvalido("Nó inválido!");
+    }
+
+    public void insertFirst(Object o){
+        if (isEmpty()){
+            throw new EmptyListaException("A lista está vazia!");
+        }
+
+        if (size() == capacidade -1){
+            capacidade2 = capacidade * 2;
+            Node[] novoArray = new Node(capacidade2);
+
+            for (int i=0; i < size(); i++){
+                novoArray[i] = array[i];
+            }
+            array = novo;
+        }
+        for (int i = size(); i > 0; i--){
+            array[i] = array[i-1];
+        }
+        Node novo = new Node(o);
+        array[0] = novo;
+        tamanho++;
+        return;
+    }
+
+    public void insertLast(Object o){
+        if (isEmpty()){
+            throw new EmptyListaException("A lista está vazia!");
+        }
+
+        if (size() == capacidade -1){
+            capacidade2 = capacidade *2;
+            Node[] novoArray = new Node(capacidade2);
+
+            for (int i=0; i < size(); i++){
+                novoArray[i] = array[i];
+            }
+            array = novo;
+        }
+        Node novo = new Node(o);
+        array[size()] = novo;
+        tamanho++;
+        return;
+    }
+
+    public void remove(Node n){
+        if (isEmpty()){
+            throw new EmptyListaException("A lista está vazia!");
+        }
+
+        for (int i =0; i != size(); i++){
+            if (array[i] == n){
+                for (int j = i; j < size() - 1; j++){
+                    array[j] = array[j+1];
+                }
+            }
+            tamanho --;
+            return;
+        }
+
+        throw new NoInvalido("Nó inválido!");
     }
 }
