@@ -69,7 +69,7 @@ public class ListaArray implements Lista{
         Node velha = null;
         Node nova = null;
 
-        for (i=0; i != size(); i++){
+        for (int i=0; i != size(); i++){
             if (array[i] == n){
                 nova = n;
             } else if (array[i] == q) {
@@ -91,8 +91,30 @@ public class ListaArray implements Lista{
             throw new EmptyListaException("A lista está vazia!");
         }
 
-        if (size() == capacidade - 1){
-            
+
+        for (int i=0; i != size(); i++){
+            if (array[i] == n){
+                if (size() == capacidade -1){
+                    capacidade2 = capacidade*2;
+                    Node[] novoArray = new Node[capacidade2];
+
+                    for(int j=0; j < capacidade2; j++){
+                        novoArray[j] = array[j];
+                    }
+                    array = novoArray;
+                }
+                for (int j = size(); j > i; j--){
+                    array[j] = array[j-1];
+                }
+
+                Node node = new Node(o);
+                array[i] = node;
+                tamanho++;
+                return;
+            }
         }
+
+        
+        throw new NoInvalido("O nó inválido!");
     }
 }
