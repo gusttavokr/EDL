@@ -46,11 +46,12 @@ public class PilhaArray implements Pilha{
         }
 
         if( size() == capacidade - 1){
+            int capacidade2;
             if (FC == 0) {
-                int capacidade2 = capacidade*2;
+                capacidade2 = capacidade*2;
             }
             else{
-                int capacidade2 = capacidade + FC;
+                capacidade2 = capacidade + FC;
             }
             Pilha[] novo = new Pilha[capacidade2];
             for (int i =0; i<capacidade; i++){
