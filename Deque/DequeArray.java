@@ -40,12 +40,41 @@ public class DequeArray implements Deque{
         if (isEmpty()) {
             throw new DequeVazioExcecao("O deque está vazio!");
         }
+
+        return array[fimDeque];
     }
 
     public void inserirInicio(Object o){
         duplicacao();
         array[inicioDeque] = o;
         inicioDeque = (inicioDeque + 1)%capacidade;
+    }
+
+    public Object removerInicio(){
+        if (isEmpty()) {
+            throw new DequeVazioExcecao("O deque está vazio!");
+        }
+        
+        Object removido = array[inicioDeque];
+        array[inicioDeque] = null;
+        inicioDeque = ((inicioDeque +1)%capacidade);
+        return removido;
+    }
+
+    public void inserirFim(Object o){
+        duplicacao();
+        array[fimDeque] = o;
+        fimDeque = (fimDeque+1)%capacidade;
+    }
+
+    public Object removerFim(){
+        if (isEmpty()) {
+            throw new DequeVazioExcecao("O deque está vazio!");
+        }
+        Object removido = array[fimDeque];
+        array[fimDeque] = null;
+        fimDeque = (fimDeque +1)%capacidade;
+        return removido;
     }
 
     public void duplicacao(){

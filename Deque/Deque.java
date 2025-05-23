@@ -7,8 +7,8 @@ public interface Deque{
     public Object first();
     public Object last();
 
-    public Object inserirInicio();
-    public void removerInicio(Object o);
-    public Object inserirFim();
-    public void removerFim(Object o);
+    public void inserirInicio(Object o);
+    public Object removerInicio();
+    public void inserirFim(Object o);
+    public Object removerFim();
 }
