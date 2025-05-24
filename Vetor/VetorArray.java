@@ -47,7 +47,29 @@ public class VetorArray implements Vetor{
         return removido;
     }
 
+    public void insertAtRank(int r, Object o){
     
+        if (r < 0 || r > (size()-1)){
+            throw new VetorNullExcecao("O elemento não existe nesse rank");
+        }
+
+        if (size() == capacidade - 1) {
+            capacidade *= 2;
+            Object[] arrayNovo = new Object[capacidade];
+
+            for (int i=0; i < size(); i++){
+                arrayNovo[i] = array[i];
+            }
+
+            array = arrayNovo;
+        }
+
+        for (int i = (finalVetor-1); i >= r; i--){
+            array[i+1] = array[i];
+        }
+
+        array[r] = o;
+    }
 
     public void validacao(int r){
         if (isEmpty()) {
