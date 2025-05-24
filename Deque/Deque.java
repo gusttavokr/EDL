@@ -8,7 +8,7 @@ public interface Deque{
     public Object last();
 
     public void inserirInicio(Object o);
-    public Object removerInicio();
+    public Object removerInicio() throws DequeVazioExcecao;
     public void inserirFim(Object o);
-    public Object removerFim();
+    public Object removerFim() throws DequeVazioExcecao;
 }
