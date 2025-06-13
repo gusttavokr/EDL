@@ -33,7 +33,7 @@ public class Node {
     }
 
     public void adicionarFilho(Node filho){
-        filho.setPai(this);
+        filho.setPai(this.pai);
         filhos.add(filho);
     }
 
