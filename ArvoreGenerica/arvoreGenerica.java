@@ -43,7 +43,7 @@ public class ArvoreGenerica implements Arvore {
         return n.getPai();
     }
     
-    public List<Node> children(Node n) {
+    public Iterator<Node> children(Node n) {
         return n.getFilhos().iterator();
     }
     
