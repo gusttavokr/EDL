@@ -3,17 +3,17 @@ import java.util.Iterator;
 
 import Node.Node;
 
-public interface ArvoreGenerica {
+public interface Arvore {
     public int size();
-    public int height(); // A altura 
+    public int height(Node n); // A altura 
     public boolean isEmpty();
-    public Iterator elements(); //
-    public Iterator nos(); 
+    public Iterator<Node> elements(); // Elementos armazenados nos nós
+    public Iterator<Node> nos(); // Retorna os nós
 
     // Acesso
     public Node root();
     public Node parent(Node n);
-    public ListaDuplamenteEncadeada children (Node n);
+    public Interator<Node> children (Node n);
 
     // Consulta
     public boolean isExternal(Node n); // Nó sem filhos
