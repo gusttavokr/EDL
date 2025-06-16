@@ -8,7 +8,7 @@ public interface Arvore {
     public int height(Node n); // A altura 
     public boolean isEmpty();
     public Iterator<Object> elements(); // Elementos armazenados nos nós
-    public Iterator<Node> nos(); // Retorna os nós
+    public Iterator<Node> nodes(); // Retorna os nós
 
     // Acesso
     public Node root();

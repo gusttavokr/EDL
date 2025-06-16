@@ -33,8 +33,15 @@ public class ArvoreGenerica implements Arvore {
     public boolean isEmpty() {
         return (tamanho == 0);
     }
-
     
+    public void preOrder(Node n, ArrayList<Object> array) {
+        elemento = n.getElemento();
+        array.add(elemento);
+        for (Node w : n.getFilhos()) {
+            preOrder(w, array);
+        }
+    }
+       
     public Node root() {
         return this.raiz;
     }
@@ -47,24 +54,42 @@ public class ArvoreGenerica implements Arvore {
         return n.getFilhos().iterator();
     }
     
-    public boolean isExternal(Node n) {
-        return n.getFilhos().size() == 0;
-    }
-    
-    public void preOrder(Node n, ArrayList<Object> array) {
-        elemento = n.getElemento();
-        array.add(elemento);
-        for (Node w : n.getFilhos()) {
-            preOrder(w, array);
-        }
-    }
     public Iterator<Object> elements() {
         if (isEmpty()) {
             throw new ArvoreVaziaExcecao("Essa árvore está vazia");
         } else {
-            ArrayList<Object> array = new ArrayList<Object>();
+            ArrayList<Object> array = new ArrayList<>();
             preOrder(raiz, array);
             return array.iterator();
         }
+    }
+    
+    public void postOrder(Node n, ArrayList<Node> array) {
+        for (Node w : n.getFilhos()) {
+            postOrder(w, array);
+        }
+        array.add(n);
+    }
+    
+    public Iterator<Node> nodes(){
+        if (isEmpty()) {
+            throw new ArvoreVaziaExcecao("Essa árvore está vazia");
+        } else {
+            ArrayList<Node> array = new ArrayList<>();
+            postOrder(raiz, array);
+            return array.iterator();
+        }
+    }
+
+    public boolean isExternal(Node n) {
+        return n.getFilhos().size() == 0;
+    }
+
+    public boolean isInternal(Node n){
+        return n.getFilhos().size() >= 1 ;
+    }
+
+    public boolean isRoot(Node n){
+        return n == raiz;
     }
 }
