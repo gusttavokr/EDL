@@ -1,4 +1,4 @@
-package Node;
+package Arvores;
 
 import java.util.List;
 import java.util.ArrayList;

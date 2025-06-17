@@ -1,7 +1,7 @@
-package ArvoreGenerica;
+package Arvores;
 import java.util.Iterator;
 
-import Node.Node;
+import Arvores.Node;
 
 public interface Arvore {
     public int size();

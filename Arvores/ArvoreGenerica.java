@@ -1,9 +1,9 @@
-package ArvoreGenerica;
+package Arvores;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 
-import ArvoreGenerica.Node;
+import Arvores.Node;
 
 public class ArvoreGenerica implements Arvore {
     public int tamanho;
@@ -35,7 +35,7 @@ public class ArvoreGenerica implements Arvore {
     }
     
     public void preOrder(Node n, ArrayList<Object> array) {
-        elemento = n.getElemento();
+        Object elemento = n.getElemento();
         array.add(elemento);
         for (Node w : n.getFilhos()) {
             preOrder(w, array);
@@ -94,7 +94,7 @@ public class ArvoreGenerica implements Arvore {
     }
 
     public int depth(Node n){
-        if (isRoot(n)){
+        if ((isRoot(n)) || (n.getPai() == null)){
             return 0;
         } else{
             return 1 + depth(parent(n));
