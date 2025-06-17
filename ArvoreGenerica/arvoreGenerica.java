@@ -92,4 +92,21 @@ public class ArvoreGenerica implements Arvore {
     public boolean isRoot(Node n){
         return n == raiz;
     }
+
+    public int depth(Node n){
+        if (isRoot(n)){
+            return 0;
+        } else{
+            return 1 + depth(parent(n));
+        }
+    }
+
+    public Object replace(Node n, Object o){
+        if (isEmpty()) {
+            throw new ArvoreVaziaExcecao("A árvore está vazia");
+        }
+        Object temp = n.getElemento();
+        n.setElemento(o);
+        return temp;
+    }
 }
