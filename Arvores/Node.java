@@ -7,6 +7,8 @@ public class Node {
     private Object elemento;
     private Node pai;
     private List<Node> filhos;
+    private Node filhoEsq;
+    private Node filhoDir;
 
     public Node (Object o){
         this.elemento = o;
@@ -39,5 +41,30 @@ public class Node {
 
     public void removerFilho(Node filho){
         filhos.remove(filho);
+    }
+
+    public Node getFilhoEsq(){
+        return filhoEsq;
+    }
+    public Node getFilhoDir(){
+        return filhoDir;
+    }
+
+    public void setFilhoEsq(Node n){
+        if (n == null) {
+            removerFilho(filhoEsq);
+        } else{
+            adicionarFilho(n);
+        }
+        filhoEsq = n;
+    }
+    
+    public void setFilhoDir(Node n){
+        if (n == null) {
+            removerFilho(filhoDir);
+        } else{
+            adicionarFilho(n);
+        }
+        filhoDir = n;
     }
 }
