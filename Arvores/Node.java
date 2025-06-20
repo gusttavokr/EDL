@@ -35,7 +35,7 @@ public class Node {
     }
 
     public void adicionarFilho(Node filho){
-        filho.setPai(this.pai);
+        // filho.setPai(this.pai);
         filhos.add(filho);
     }
 
