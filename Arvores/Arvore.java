@@ -23,5 +23,5 @@ public interface Arvore {
 
     // Atualização
     public Object replace(Node n, Object o);
-    // public Node remove(Node n);
+    public Node remove(Node n);
 }

@@ -112,18 +112,31 @@ public class ArvoreGenerica implements Arvore {
         return temp;
     }
 
-    // public Node remove(Node n){
-    //     if (isEmpty()) {
-    //         //blablabla
-    //     }
+    public Node remove(Node n){
+        if (isEmpty()) {
+            throw new ArvoreVaziaExcecao("A árvore está vazia!");
+        }
 
-    //     if (isRoot(n)){
-    //         raiz = null;
-    //         return raiz;
-    //     } else{
-    //         if (isExternal(n)) {
-                
-    //         }
-    //     }
-    // }
+        if (isExternal(n)){
+            Node removido = n;
+            (n.getPai()).removerFilho(n);
+            return removido;
+        } 
+
+        if (!isRoot(n)) {
+            for (Node w : n.getFilhos()){
+                remove(w);
+            }
+            Node removido = n;
+            (n.getPai()).removerFilho(n);
+            return removido;
+        } else{
+            for (Node w : n.getFilhos()){
+                remove(w);
+            }
+            Node removido = raiz;
+            raiz = null;
+            return removido;
+        }
+    }
 }
