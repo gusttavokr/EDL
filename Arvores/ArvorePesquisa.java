@@ -1,6 +1,5 @@
 package Arvores;
 
-import Arvores.Node;
 
 public class ArvorePesquisa extends ArvoreBinaria {
     public ArvorePesquisa(Object o) {

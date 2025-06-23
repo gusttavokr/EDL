@@ -35,14 +35,14 @@ public class ListaArray implements Lista{
         return array[size() - 1] == n;
     }
 
-    public Node First(){
+    public Node first(){
         if (isEmpty()){
             throw new EmptyListaException("A lista está vazia!");
         }
         return array[0];
     }
 
-    public Node Last(){
+    public Node last(){
         if(isEmpty()){
             throw new EmptyListaException("A lista está vazia!");
         }
@@ -87,7 +87,7 @@ public class ListaArray implements Lista{
             throw new EmptyListaException("A lista está vazia!");
         }
 
-        for (i=0; i<size(); i++){ // Percorra a lista
+        for (int i=0; i<size(); i++){ // Percorra a lista
             if (array[i] == n){ // Se o i for igual ao nó que vc quer
                 n.setElemento(o); // o novo elemento será aplicado
             }
@@ -126,6 +126,7 @@ public class ListaArray implements Lista{
 
         for (int i=0; i < size(); i++){
             if (array[i] == n){
+                int capacidade2;
                 if (size() == capacidade -1){
                     capacidade2 = capacidade*2;
                     Node[] novoArray = new Node[capacidade2];
@@ -155,14 +156,15 @@ public class ListaArray implements Lista{
         }
         for (int i=0; i < size(); i++){
             if (array[i] == n){
+                int capacidade2;
                 if (size() == capacidade -1){
                     capacidade2 = capacidade *2;
-                    Node[] novoarray = new Node(capacidade2);
+                    Node[] novoarray = new Node[capacidade2];
+                    for (int j = 0; i != capacidade2; i++){
+                        novoarray[j] = array[j];
+                    }
+                    array = novoarray;
                 }
-                for (int j = 0; i != capacidade2; i++){
-                    novoarray[j] = array[j];
-                }
-                array = novoarray;
             }
             for (int j = size(); j > i; j--){
                 array[j] = array[j-1];
@@ -183,13 +185,14 @@ public class ListaArray implements Lista{
         }
 
         if (size() == capacidade -1){
+            int capacidade2;
             capacidade2 = capacidade * 2;
-            Node[] novoArray = new Node(capacidade2);
+            Node[] novoArray = new Node[capacidade2];
 
             for (int i=0; i < size(); i++){
                 novoArray[i] = array[i];
             }
-            array = novo;
+            array = novoArray;
         }
         for (int i = size(); i > 0; i--){
             array[i] = array[i-1];
@@ -206,13 +209,14 @@ public class ListaArray implements Lista{
         }
 
         if (size() == capacidade -1){
+            int capacidade2;
             capacidade2 = capacidade *2;
-            Node[] novoArray = new Node(capacidade2);
+            Node[] novoArray = new Node[capacidade2];
 
             for (int i=0; i < size(); i++){
                 novoArray[i] = array[i];
             }
-            array = novo;
+            array = novoArray;
         }
         Node novo = new Node(o);
         array[size()] = novo;

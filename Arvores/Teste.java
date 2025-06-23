@@ -1,8 +1,4 @@
 package Arvores;
-import Arvores.ArvoreB;
-import Arvores.PosicaoInvalida;
-import Arvores.ArvoreVaziaExcecao;
-import Arvores.Node;
 
 public class Teste {
     public static void main(String[] args) {

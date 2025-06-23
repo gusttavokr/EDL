@@ -53,7 +53,7 @@ public class PilhaArray implements Pilha{
             else{
                 capacidade2 = capacidade + FC;
             }
-            Pilha[] novo = new Pilha[capacidade2];
+            Object[] novo = new Object[capacidade2];
             for (int i =0; i<capacidade; i++){
                 novo[i] = array[i];
             } 

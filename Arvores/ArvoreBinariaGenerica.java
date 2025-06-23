@@ -1,7 +1,5 @@
 package Arvores;
 
-import Arvores.Node;
-
 public class ArvoreBinariaGenerica extends ArvoreGenerica implements ArvoreB{
 
     public ArvoreBinariaGenerica(Object o){ // Construtor

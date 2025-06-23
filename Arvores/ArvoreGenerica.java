@@ -3,7 +3,6 @@ package Arvores;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-import Arvores.Node;
 
 public class ArvoreGenerica implements Arvore {
     public int tamanho;
@@ -112,31 +111,31 @@ public class ArvoreGenerica implements Arvore {
         return temp;
     }
 
-    public Node remove(Node n){
-        if (isEmpty()) {
-            throw new ArvoreVaziaExcecao("A árvore está vazia!");
-        }
+    // public Node remove(Node n){
+    //     if (isEmpty()) {
+    //         throw new ArvoreVaziaExcecao("A árvore está vazia!");
+    //     }
 
-        if (isExternal(n)){
-            Node removido = n;
-            (n.getPai()).removerFilho(n);
-            return removido;
-        } 
+    //     if (isExternal(n)){
+    //         Node removido = n;
+    //         (n.getPai()).removerFilho(n);
+    //         return removido;
+    //     } 
 
-        if (!isRoot(n)) {
-            for (Node w : n.getFilhos()){
-                remove(w);
-            }
-            Node removido = n;
-            (n.getPai()).removerFilho(n);
-            return removido;
-        } else{
-            for (Node w : n.getFilhos()){
-                remove(w);
-            }
-            Node removido = raiz;
-            raiz = null;
-            return removido;
-        }
-    }
+    //     if (!isRoot(n)) {
+    //         for (Node w : n.getFilhos()){
+    //             remove(w);
+    //         }
+    //         Node removido = n;
+    //         (n.getPai()).removerFilho(n);
+    //         return removido;
+    //     } else{
+    //         for (Node w : n.getFilhos()){
+    //             remove(w);
+    //         }
+    //         Node removido = raiz;
+    //         raiz = null;
+    //         return removido;
+    //     }
+    // }
 }

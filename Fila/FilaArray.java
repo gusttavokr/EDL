@@ -76,7 +76,7 @@ public class FilaArray implements Fila{
     }
 
     public void print(){
-        for (int i; i < size(); i++){
+        for (int i = 0; i < size(); i++){
             System.out.println(array[i]);
         }
     }

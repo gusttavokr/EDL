@@ -1,6 +1,6 @@
 package Sequência;
 
-public class SequenciaInvalida extends RuntimeError{
+public class SequenciaInvalida extends RuntimeException{
     public SequenciaInvalida(String err){
         super(err);
     }

@@ -26,7 +26,7 @@ public class VetorArray implements Vetor{
         return elemento;
     }
 
-    public Object replaceElement(int r, Object o){
+    public Object replaceAtRank(int r, Object o){
         validacao(r);
 
         Object antigo = array[r];

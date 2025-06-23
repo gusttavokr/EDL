@@ -40,7 +40,7 @@ public class ListaDuplamenteEncadeada implements Lista{
         return n == fim.getAnterior();
     }
 
-    public Node First(){
+    public Node first(){
         if(isEmpty()){
             throw new EmptyListaException("A lista está vazia!");
         }
@@ -48,7 +48,7 @@ public class ListaDuplamenteEncadeada implements Lista{
         return inicio.getProximo();
     }
 
-    public Node Last(){
+    public Node last(){
         if(isEmpty()){
             throw new EmptyListaException("A lista está vazia!");
         }
@@ -77,7 +77,7 @@ public class ListaDuplamenteEncadeada implements Lista{
         validacaoNo(n);
         validacaoNo(q);
 
-        elemento = n.getElemento();
+        Object elemento = n.getElemento();
         n.setElemento(q.getElemento());
         q.setElemento(elemento);
     }
@@ -154,7 +154,7 @@ public class ListaDuplamenteEncadeada implements Lista{
             throw new NoInvalido("O nó é inválido!");
         }
 
-        temp = inicio.getProximo();
+        Node temp = inicio.getProximo();
         while (temp != fim){
             if (temp == n){
                return;
@@ -165,7 +165,7 @@ public class ListaDuplamenteEncadeada implements Lista{
     }
 
     public void validacaoObject(Object o){
-        if (o == Null){
+        if (o == null){
             throw new ObjectNullException("O objeto não pode ser nulo!");
         }
     }

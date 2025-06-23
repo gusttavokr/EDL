@@ -1,8 +1,6 @@
 package Arvores;
 import java.util.Iterator;
 
-import Arvores.Node;
-
 public interface Arvore {
     public int size();
     public int height(Node n); // A altura 
@@ -23,5 +21,4 @@ public interface Arvore {
 
     // Atualização
     public Object replace(Node n, Object o);
-    public Node remove(Node n);
 }

@@ -56,13 +56,13 @@ public class SequenciaDupla implements Sequencia{
             temp = temp.getProximo();
         }
 
-        Object elemento = temp.getElemento(temp.getProximo());
+        Object elemento = temp.getProximo().getElemento();
 
         return elemento;
     }
 
     public Object replaceAtRank(int r, Object o){
-        validacao();
+        validacao(r);
 
         Node temp = NoInicio.getProximo();
 
@@ -77,7 +77,7 @@ public class SequenciaDupla implements Sequencia{
     }
 
     public Object removeAtRank(int r){
-        validacao();
+        validacao(r);
 
         Node temp = NoInicio.getProximo();
 
@@ -94,7 +94,7 @@ public class SequenciaDupla implements Sequencia{
     }
 
     public Node atRank(int r){
-        validacao();
+        validacao(r);
 
         Node temp = NoInicio.getProximo();
 
@@ -106,8 +106,6 @@ public class SequenciaDupla implements Sequencia{
     }
 
     public int rankOf(Node n){
-        validacao();
-
         Node temp = NoInicio.getProximo();
 
         for (int i = 0; temp != NoFim; i++){
@@ -121,12 +119,10 @@ public class SequenciaDupla implements Sequencia{
     }
 
     public Node first(){
-        validacao();
         return NoInicio.getProximo();
     }
 
     public Node last(){
-        validacao();
         return NoFim.getAnterior();
     }
 
@@ -169,8 +165,7 @@ public class SequenciaDupla implements Sequencia{
         tamanho++;
     }
 
-    public void insertFirst(Node n, Object o){
-        ObjectNoNull(n);
+    public void insertFirst(Object o){
 
         Node novo = new Node(o);
         novo.setAnterior(NoInicio);
@@ -180,8 +175,7 @@ public class SequenciaDupla implements Sequencia{
         tamanho++;
     }
 
-    public void insertLast(Node n, Object o){
-        ObjectNoNull(n);
+    public void insertLast(Object o){
 
         Node novo = new Node(o);
 
