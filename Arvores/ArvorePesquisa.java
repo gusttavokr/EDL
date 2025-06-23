@@ -8,12 +8,12 @@ public class ArvorePesquisa extends ArvoreBinaria {
     }
 
     public Node busca(Object k, Node v) {
-
-        if ((comparar(k, v.getElemento())) < 0) {
+        // System.out.println(k + " " + v.getElemento());
+        if ((comparar(v.getElemento(), k)) < 0) {
             if (hasLeft(v)) {
                 return busca(k, leftChild(v));
             }
-        } else if ((comparar(k, v.getElemento())) == 0) {
+        } else if ((comparar(v.getElemento(), k)) == 0) {
             return v;
         } else {
             if (hasRight(v)){
@@ -57,7 +57,7 @@ public class ArvorePesquisa extends ArvoreBinaria {
             tamanho = 1;
             return no;
         }
-
+        
         Node nodePai = busca(k, raiz);
         if (comparar(k, nodePai.getElemento()) == 0) {
             throw new PosicaoInvalida("Esse elemento já existe!");
@@ -68,7 +68,7 @@ public class ArvorePesquisa extends ArvoreBinaria {
         if (comparar(nodePai.getElemento(), k) < 0) {
             nodePai.setFilhoEsq(no);
         } else {
-            System.out.println(no.getElemento());
+            // System.out.println(k + " " + nodePai.getElemento());
             nodePai.setFilhoDir(no);
         }
         
@@ -78,7 +78,7 @@ public class ArvorePesquisa extends ArvoreBinaria {
     
     public Object remove(Node n) {
         if (isEmpty()) {
-            
+            throw new ArvoreVaziaExcecao("A árvore está vazia!");
         }
         
         Node pai = n.getPai();
@@ -100,6 +100,7 @@ public class ArvorePesquisa extends ArvoreBinaria {
             if (n == pai.getFilhoDir()) {
                 pai.setFilhoDir(null);
                 tamanho--;
+                System.out.println(n.getElemento());
                 return n.getElemento();
             } else {
                 pai.setFilhoEsq(null);

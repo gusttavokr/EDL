@@ -1,6 +1,10 @@
 package Arvores;
 
+import java.util.Iterator;
+
 import Arvores.Node;
+import java.util.Iterator;
+import java.util.ArrayList;
 
 public class ArvoreBinaria extends ArvoreBinariaGenerica{
     
@@ -137,6 +141,32 @@ public class ArvoreBinaria extends ArvoreBinariaGenerica{
             }
 
             System.out.println();
+        }
+    }
+
+    @Override
+    public void postOrder(Node n, ArrayList<Node> array) {
+        if (hasLeft(n)) {
+            postOrder(n.getFilhoEsq(), array);
+        }
+
+        if (hasRight(n)) {
+            postOrder(n.getFilhoDir(), array);
+        }
+        
+        array.add(n);
+    }
+
+    @Override
+    public void preOrder(Node n, ArrayList<Object> array) {
+        array.add(n.getElemento());
+        
+        if (hasLeft(n)) {
+            preOrder(n.getFilhoEsq(), array);
+        }
+
+        if (hasRight(n)) {
+            preOrder(n.getFilhoDir(), array);
         }
     }
 }

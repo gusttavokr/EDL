@@ -35,7 +35,6 @@ public class Node {
     }
 
     public void adicionarFilho(Node filho){
-        // filho.setPai(this.pai);
         filhos.add(filho);
     }
 
@@ -51,20 +50,10 @@ public class Node {
     }
 
     public void setFilhoEsq(Node n){
-        if (n == null) {
-            removerFilho(filhoEsq);
-        } else{
-            adicionarFilho(n);
-        }
         filhoEsq = n;
     }
     
     public void setFilhoDir(Node n){
-        if (n == null) {
-            removerFilho(filhoDir);
-        } else{
-            adicionarFilho(n);
-        }
         filhoDir = n;
     }
 }

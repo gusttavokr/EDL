@@ -66,8 +66,10 @@ public class ArvoreGenerica implements Arvore {
     
     public void postOrder(Node n, ArrayList<Node> array) {
         for (Node w : n.getFilhos()) {
+            // System.out.println("Estou aqui " + w.getElemento() + " sai fdp " + n.getElemento());
             postOrder(w, array);
         }
+        
         array.add(n);
     }
     
@@ -109,4 +111,19 @@ public class ArvoreGenerica implements Arvore {
         n.setElemento(o);
         return temp;
     }
+
+    // public Node remove(Node n){
+    //     if (isEmpty()) {
+    //         //blablabla
+    //     }
+
+    //     if (isRoot(n)){
+    //         raiz = null;
+    //         return raiz;
+    //     } else{
+    //         if (isExternal(n)) {
+                
+    //         }
+    //     }
+    // }
 }
