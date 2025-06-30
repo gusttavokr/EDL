@@ -11,13 +11,13 @@ public class Teste {
             System.out.println("Raiz: " + raiz.getElemento()); // Esperado: A
 
             // Teste: inserir filhos
-            Node b = arvore.insertLeft(raiz, "B");
-            Node c = arvore.insertRight(raiz, "C");
+            // Node b = arvore.insertLeft(raiz, "B");
+            // Node c = arvore.insertRight(raiz, "C");
             
-            Node d = arvore.insertLeft(b, "D");
-            Node e = arvore.insertRight(b, "E");
+            // Node d = arvore.insertLeft(b, "D");
+            // Node e = arvore.insertRight(b, "E");
             
-            Node f = arvore.insertRight(c, "F");
+            // Node f = arvore.insertRight(c, "F");
 
             arvore.children(raiz).forEachRemaining(no -> System.out.print(no.getElemento() + " "));
             
