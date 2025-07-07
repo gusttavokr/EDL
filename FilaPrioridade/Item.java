@@ -1,15 +1,15 @@
-package Arvores.FilaPrioridade;
+package FilaPrioridade;
 
-public class Item implements ItemInterface{
-    public Object chave;
+public class Item implements Entry{
+    public int chave;
     public Object valor;
 
-    public Item(Object key, Object value){
+    public Item(int key, Object value){
         this.chave = key;
         this.valor = value;
     }
 
-    public Object key(){
+    public int key(){
         return chave;
     }
 
