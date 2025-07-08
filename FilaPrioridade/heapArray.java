@@ -8,7 +8,7 @@ public class heapArray implements filaPrioridade{
     public heapArray(int capacidade){
         this.capacidade = capacidade;
         ultimo = 0;
-        array = new Object[capacidade]; 
+        array = new Item[capacidade]; 
     }
 
     public boolean isEmpty(){
@@ -21,6 +21,20 @@ public class heapArray implements filaPrioridade{
 
     public void insert(int k, Object o){
 
+
+        if (isEmpty()){
+            
+        } else{
+            if (k > size()) {
+
+                int capacidade2 = capacidade*k;
+                Item[] novo = new Item[capacidade2];
+
+                for (int i = 0; i< size(); i++){
+                    novo[i] = array[i];
+                }
+            }
+        }
         // if (isEmpty()) {
 
         // } else{
