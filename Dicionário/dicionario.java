@@ -1,5 +1,6 @@
-package FilaPrioridade;
+package Dicionário;
 import java.util.Iterator;
+import Dicionário.Item;
 
 public interface dicionario {
     public Object findElement(int k);
