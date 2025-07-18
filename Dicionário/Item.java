@@ -1,10 +1,8 @@
 package Dicionário;
 
-import Dicionário.Entry;
-
 public class Item implements Entry{
-    public int chave;
-    public Object valor;
+    private int chave;
+    private Object valor;
 
     public Item(int key, Object value){
         this.chave = key;

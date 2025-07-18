@@ -7,7 +7,7 @@ public class Hash implements Dict {
     private int capacidade;
     private int tamanho;
 
-    private Hash(int capacidade) {
+    public Hash(int capacidade) {
         if (!this.isPrimo(capacidade)) {
             this.capacidade = capacidade;
         } else {
@@ -17,7 +17,7 @@ public class Hash implements Dict {
         this.tamanho = 0;
     }
 
-    private void insertItem(int k, Object o) {
+    public void insertItem(int k, Object o) {
         Item itemNovo = new Item(k, o);
 
         int index = this.dispercao(k);
@@ -28,7 +28,7 @@ public class Hash implements Dict {
         }
 
         this.array[index] = itemNovo;
-        tamanho++;
+        tamanho = tamanho+1;
     }
 
     private int dispercao(int k) {
@@ -78,6 +78,7 @@ public class Hash implements Dict {
 
             return true;
         }
+        return false;
     }
 
     private int proximoPrimo(int num) {
